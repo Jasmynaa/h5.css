@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>3_5</title>
+    <meta charset="UTF-8">
+    <style>
+        fieldset {
+            width: 300px;
+        }
+        
+        form {
+            font-size: 15px;
+        }
+        
+        input {
+            width: 280px;
+            margin-top: 7px;
+            margin-bottom: 7px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>学生信息</h3>
+    <fieldset>
+        <legend style="color: orangered;">学生档案</legend>
+        <form id="testform" method="get" action="form.asp">
+            姓名:<br>
+            <input type="text" name="name1" placeholder="请输入姓名" required><br> 学号:
+            <br>
+            <input type="number" placeholder="请输入学号" name="num" required> <br>手机号码:
+            <br>
+            <input type="tel" placeholder="请输入手机号" name="no" required><br> 邮箱地址:
+            <br>
+            <input type="email" name="email" placeholder="请输入邮箱地址" required><br> 录取学校:
+            <br>
+            <input type="search" name="sea1" list="names">
+            <datalist id="names">
+                <option value="河北师范大学">
+                <option value="北京师范大学">
+                <option value="清华大学">
+                <option value="北京大学">
+                <option value="河北科技大学">
+                <option value="武汉大学">
+            </datalist>
+            <br> 入学成绩：
+            <br>
+            <input type="number" name="score"><br> 入学时间：
+            <br>
+            <input type="date" name="datedemo">
+            <br/>
+            <input type="submit" value="提交">
+        </form>
+    </fieldset>
+</body>
+
+</html>
