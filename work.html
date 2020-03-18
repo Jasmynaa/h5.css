@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>work</title>
+    <link href="work.css" rel="stylesheet">
+</head>
+
+<body>
+    <fieldset>
+        <legend style="color: red;font-size: 40px;">网页换肤</legend>
+        <div class="color">
+            <ul id="logo">
+                <li title="绿色" style="background-color: green;" onclick="gr()"></li>
+                <li title="红色" style="background-color: red;" onclick="r()"></li>
+                <li title="紫色" style="background-color: purple;" onclick="p()"></li>
+                <li title="黄色" style="background-color: yellow;" onclick="y()"></li>
+                <li title="蓝色" style="background-color: blue;" onclick="bl()"></li>
+                <li title="灰色" style="background-color: gray;" onclick="g()"></li>
+            </ul>
+        </div>.
+        <div id="text" class="col">
+            LocalStorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了，该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用
+        </div>
+    </fieldset>
+</body>
+<script>
+    var aaa = document.getElementById("logo").children;
+    var index;
+    if (!window.localStorage) {
+        alert("您的浏览器不支持localStorage");
+    }
+    var Color = window.localStorage.getItem("Color");
+
+    if (Color) {
+        document.getElementById("text").style.backgroundColor = Color;
+    }
+
+    function change() {
+        for (var i = 0; i < aaa.length; i++) {
+            aaa[i].className = "";
+        }
+        if (index == 0) {
+            aaa[0].className = "selected";
+        } else if (index == 1) {
+            aaa[1].className = "selected";
+        } else if (index == 2) {
+            aaa[2].className = "selected";
+        } else if (index == 3) {
+            aaa[3].className = "selected";
+        } else if (index == 4) {
+            aaa[4].className = "selected";
+        } else if (index == 5) {
+            aaa[5].className = "selected";
+        }
+
+    }
+
+    function gr() {
+
+        document.getElementById("text").style.backgroundColor = "green";
+
+        localStorage.setItem('Color', "green");
+        index = 0;
+        change();
+        index++;
+    }
+
+    function r() {
+        index = 1;
+        change();
+        document.getElementById("text").style.backgroundColor = "red";
+        index++;
+        localStorage.setItem('Color', "red");
+    }
+
+    function p() {
+        index = 2;
+        change();
+        document.getElementById("text").style.backgroundColor = "purple";
+        localStorage.setItem("Color", 'purple');
+    }
+
+    function y() {
+        index = 3;
+        change();
+        document.getElementById("text").style.backgroundColor = "yellow";
+        index++;
+        localStorage.setItem("Color", 'yellow');
+    }
+
+    function bl() {
+        index = 4;
+        change();
+        document.getElementById("text").style.backgroundColor = "blue";
+        index++;
+        localStorage.setItem("Color", 'blue');
+    }
+
+    function g() {
+        index = 5;
+        change();
+        document.getElementById("text").style.backgroundColor = "gray";
+        index++;
+        localStorage.setItem("Color", 'gray');
+    }
+</script>
+
+</html>
